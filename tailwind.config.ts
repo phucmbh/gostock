@@ -1,20 +1,56 @@
 import type { Config } from "tailwindcss";
 
-const config: Config = {
+import { createThemes } from "tw-colors";
+
+const config = {
+  darkMode: ["class"],
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
   ],
+  prefix: "",
   theme: {
+    container: {
+      center: true,
+      padding: "2rem",
+      screens: {
+        "2xl": "1400px",
+      },
+    },
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      animation: {
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
       },
     },
   },
-  plugins: [],
-};
+  plugins: [
+    require("tailwindcss-animate"),
+    createThemes({
+      light: {
+        white: "#FFFFFF",
+        black: "#242424",
+        grey: "#F3F3F3",
+        "dark-grey": "#6B6B6B",
+        red: "#FF4E4E",
+        transparent: "transparent",
+        twitter: "#1DA1F2",
+        purple: "#8B46FF",
+      },
+      dark: {
+        white: "#242424",
+        black: "#F3F3F3",
+        grey: "#2A2A2A",
+        "dark-grey": "#E7E7E7",
+        red: "#991F1F",
+        transparent: "transparent",
+        twitter: "#0E71A8",
+        purple: "#582C8E",
+      },
+    }),
+  ],
+} satisfies Config;
+
 export default config;
