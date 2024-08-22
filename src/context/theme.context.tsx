@@ -1,12 +1,17 @@
 "use client";
+import { LocalStorage } from "@/utils/localStorage";
 import { createContext, SetStateAction, useEffect, useState } from "react";
 
 const darkthemePreference = () => {
-  if (
-    typeof window !== "undefined" &&
-    window.matchMedia("prefers-color-schema:dark").matches
-  )
-    return "dark";
+  if (typeof window !== "undefined") {
+    const theme = LocalStorage.getTheme();
+    const isSystemDarkMode = window.matchMedia(
+      "prefers-color-schema:dark",
+    ).matches;
+    if (theme) return theme;
+    if (isSystemDarkMode) return "dark";
+  }
+
   return "light";
 };
 

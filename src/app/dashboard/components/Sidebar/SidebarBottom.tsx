@@ -29,7 +29,7 @@ function MenuItem({ icon, title, path, notification }: MenuItemProps) {
   return (
     <Link
       href={path}
-      className="flex items-center justify-between p-2 hover:rounded-md hover:bg-slate-100"
+      className="text-semiblack flex items-center justify-between p-2 hover:rounded-md hover:bg-borderwhite"
     >
       <div className="flex items-center gap-2">
         {icon}

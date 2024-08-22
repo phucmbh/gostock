@@ -17,7 +17,7 @@ const Header = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
      
           <Search />
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4 text-semiblack">
             <DropdownMessage />
             <DropdownNotification />
             <DarkModeSwitcher />

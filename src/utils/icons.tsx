@@ -19,9 +19,13 @@ import {
   IoIosPeople,
   IoMdArrowDropdown,
   IoMdArrowDropright,
+  IoIosArrowForward,
+  IoIosArrowBack,
 } from "react-icons/io";
 import { FaArrowUp } from "react-icons/fa6";
+import { HiOutlinePlusSm } from "react-icons/hi";
 export {
+  HiOutlinePlusSm,
   MdOfflineBolt,
   MdOutlineNightlight,
   MdOutlineLightMode,
@@ -40,4 +44,6 @@ export {
   IoMdArrowDropright,
   FiSearch,
   MdOutlineKeyboardArrowDown,
+  IoIosArrowForward,
+  IoIosArrowBack,
 };

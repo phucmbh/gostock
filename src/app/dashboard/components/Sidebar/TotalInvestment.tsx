@@ -3,9 +3,9 @@ import { ComponentProps } from "react";
 const TotalInvestment = (props: ComponentProps<"div">) => {
   return (
     <div {...props}>
-      <div className="flex justify-between rounded-xl bg-black p-4 text-white">
+      <div className="bg-semiblack flex justify-between rounded-xl p-4 text-white">
         <div>
-          <div className="mb-1 text-sm text-gray-400">Total Investment</div>
+          <div className="mb-1 text-sm text-white/50">Total Investment</div>
           <div>$5390.90</div>
         </div>
         <div className="flex items-center justify-center">

@@ -19,7 +19,7 @@ const SidebarTop = (props: ComponentProps<"div">) => {
           {item.type === "SINGLE" && (
             <Link
               href={item.path}
-              className="flex items-center gap-2 p-2 hover:rounded-md hover:bg-slate-100"
+              className="text-semiblack hover:bg-borderwhite flex items-center gap-2 p-2 hover:rounded-md"
             >
               {item.icon}
               <span>{item.title}</span>
@@ -29,17 +29,17 @@ const SidebarTop = (props: ComponentProps<"div">) => {
           {item.type === "PARENT" && (
             <div>
               <div
-                className="flex cursor-pointer items-center justify-between p-2 hover:rounded-md hover:bg-slate-100"
+                className="hover:bg-borderwhite flex cursor-pointer items-center justify-between p-2 hover:rounded-md"
                 onClick={() => handleShowTabs(item.id)}
               >
-                <div className="flex items-center gap-2">
+                <div className="text-semiblack flex items-center gap-2">
                   {item.icon}
                   <span>{item.title}</span>
                 </div>
                 {activedTab.some((id) => id === item.id) ? (
-                  <IoMdArrowDropdown size={20} />
+                  <IoMdArrowDropdown size={20} className="text-semiblack" />
                 ) : (
-                  <IoMdArrowDropright size={20} />
+                  <IoMdArrowDropright size={20} className="text-semiblack" />
                 )}
               </div>
               {activedTab.some((id) => id === item.id) && (
@@ -48,7 +48,7 @@ const SidebarTop = (props: ComponentProps<"div">) => {
                     <Link
                       href={tab.path}
                       key={tab.title}
-                      className="p-2 pl-8 hover:rounded-md hover:bg-slate-200"
+                      className="text-semiblack p-2 pl-8 hover:rounded-md hover:bg-borderwhite"
                     >
                       {tab.title}
                     </Link>
