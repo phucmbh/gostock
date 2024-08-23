@@ -16,8 +16,8 @@ type SidebarType = {
   icon: React.ReactNode;
   title: string;
   path: string;
-  child?: Pick<SidebarType, 'title' | 'path'>[];
-  notification?: number
+  child?: Pick<SidebarType, "title" | "path">[];
+  notification?: number;
 };
 
 const sidebarTopList: SidebarType[] = [
@@ -69,7 +69,19 @@ const sidebarTopList: SidebarType[] = [
         path: PATH.DASHBOARD,
       },
       {
-        title: "Gold",
+        title: "Forex",
+        path: PATH.DASHBOARD,
+      },
+      {
+        title: "Oil",
+        path: PATH.DASHBOARD,
+      },
+      {
+        title: "Coffee",
+        path: PATH.DASHBOARD,
+      },
+      {
+        title: "Wheat",
         path: PATH.DASHBOARD,
       },
     ],

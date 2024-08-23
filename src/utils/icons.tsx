@@ -10,6 +10,7 @@ import {
   IoMailOutline,
   IoNotificationsOutline,
   IoSettingsOutline,
+  IoArrowBack,
 } from "react-icons/io5";
 import { RiHome3Line, RiWallet3Line, RiFundsBoxLine } from "react-icons/ri";
 import { RxDashboard } from "react-icons/rx";
@@ -21,8 +22,9 @@ import {
   IoMdArrowDropright,
   IoIosArrowForward,
   IoIosArrowBack,
+  IoMdMenu,
 } from "react-icons/io";
-import { FaArrowUp } from "react-icons/fa6";
+import { FaArrowUp, FaArrowDownLong, FaArrowUpLong } from "react-icons/fa6";
 import { HiOutlinePlusSm } from "react-icons/hi";
 export {
   HiOutlinePlusSm,
@@ -46,4 +48,8 @@ export {
   MdOutlineKeyboardArrowDown,
   IoIosArrowForward,
   IoIosArrowBack,
+  FaArrowDownLong,
+  FaArrowUpLong,
+  IoArrowBack,
+  IoMdMenu,
 };

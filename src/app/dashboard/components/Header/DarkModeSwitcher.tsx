@@ -8,13 +8,14 @@ const DarkModeSwitcher = () => {
   const { theme, setTheme } = useContext(ThemeContext);
 
   const handleChangeTheme = () => {
+    
     const newTheme = theme ==='light' ? 'dark' : 'light'
     setTheme(newTheme)
     document.body.setAttribute('data-theme', newTheme)
     LocalStorage.setTheme(newTheme)
   }
   return (
-    <button className="flex size-7 items-center justify-center rounded-full border bg-slate-100 shadow hover:bg-slate-200" onClick={handleChangeTheme}>
+    <button className="flex size-7 items-center justify-center rounded-full border border-borderwhite bg-semiwhite shadow hover:bg-borderwhite shrink-0" onClick={handleChangeTheme}>
       {theme === "light" ? (
         <MdOutlineLightMode size={16} />
       ) : (

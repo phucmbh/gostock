@@ -18,19 +18,19 @@ const stockList: StockListType[] = [
   {
     name: "Meta",
     image: "https://ik.imagekit.io/zkent266/facebook.png",
-    total_share: 312.4,
+    total_share: 140.2,
     total_return: -1.1,
   },
   {
     name: "Microsoft",
     image: "https://ik.imagekit.io/zkent266/microsoft.png",
-    total_share: 312.4,
-    total_return: -1.1,
+    total_share: 240.4,
+    total_return: 0.85,
   },
   {
     name: "Google",
     image: "https://ik.imagekit.io/zkent266/google.png",
-    total_share: 312.4,
+    total_share: 99.1,
     total_return: -1.1,
   },
   {
