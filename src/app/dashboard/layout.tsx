@@ -1,32 +1,39 @@
-"use client";
-
+import { Inter } from "next/font/google";
 import { Header } from "@/app/dashboard/components/Header";
 import { Sidebar } from "@/app/dashboard/components/Sidebar";
-import { useState } from "react";
+import SidebarProvider from "@/context/sidebar.context";
+import "../globals.css";
+import ThemeProvider from "@/context/theme.context";
+export const metadata = {
+  title: "GoStock - Dashboard",
+  description: "Dashboard Page",
+};
+const inter = Inter({ subsets: ["latin"] });
 
-const DashboardLayout = ({
+export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
-}>) => {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
-
+}>) {
   return (
-    <div>
-      <div className="flex h-screen overflow-hidden bg-semiwhite">
-        <Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
-
-        <div className="relative flex flex-1 flex-col overflow-y-auto overflow-x-hidden">
-          <Header sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
-
-          <main>
-            <div className="bg-grey mx-auto max-w-screen-2xl bg-semiwhite p-4 md:p-6 2xl:p-10">
-              {children}
+    <html lang="en">
+      <body className={inter.className}>
+        <ThemeProvider>
+          <SidebarProvider>
+            <div className="flex h-screen overflow-hidden bg-semiwhite">
+              <Sidebar />
+              <div className="relative flex flex-1 flex-col overflow-y-auto overflow-x-hidden">
+                <Header />
+                <main>
+                  <div className="bg-grey mx-auto max-w-screen-2xl bg-semiwhite p-4 md:p-6 2xl:p-10">
+                    {children}
+                  </div>
+                </main>
+              </div>
             </div>
-          </main>
-        </div>
-      </div>
-    </div>
+          </SidebarProvider>
+        </ThemeProvider>
+      </body>
+    </html>
   );
-};
-export default DashboardLayout;
+}

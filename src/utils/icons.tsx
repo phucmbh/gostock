@@ -5,6 +5,7 @@ import {
   MdOutlineKeyboardArrowDown,
 } from "react-icons/md";
 
+import CryptoPortfolioSvg from '../../public/crypto-portfolio.svg'
 
 import {
   IoMailOutline,
@@ -52,4 +53,5 @@ export {
   FaArrowUpLong,
   IoArrowBack,
   IoMdMenu,
+  CryptoPortfolioSvg,
 };

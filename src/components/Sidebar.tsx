@@ -1,14 +1,12 @@
 "use client";
-import { useContext, useEffect, useRef } from "react";
-import TotalInvestment from "./TotalInvestment";
-import SidebarTop from "./SidebarTop";
-import SidebarBottom from "./SidebarBottom";
+import { ReactNode, useContext, useEffect, useRef } from "react";
+
 import Logo from "@/components/Logo";
 import { IoArrowBack } from "@/utils/icons";
 import clsx from "clsx";
 import { SidebarContext } from "@/context/sidebar.context";
 
-const Sidebar = () => {
+const Sidebar = ({children} : {children : ReactNode}) => {
   const { sidebarOpen, setSidebarOpen } = useContext(SidebarContext);
 
   const sidebarRef = useRef<HTMLElement>(null);
@@ -43,9 +41,7 @@ const Sidebar = () => {
       </div>
 
       <div className="no-scrollbar flex h-full flex-col overflow-y-auto px-5 pb-10">
-        <TotalInvestment />
-        <SidebarTop className="mt-5 grow" />
-        <SidebarBottom className="border-t-[1px] border-t-borderwhite pt-5" />
+        {children}
       </div>
     </aside>
   );

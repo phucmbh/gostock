@@ -1,17 +1,17 @@
-import { Dispatch, SetStateAction } from "react";
-import DarkModeSwitcher from "./DarkModeSwitcher";
+'use client'
+import {  useContext } from "react";
 import DropdownMessage from "./DropdownMessage";
 import DropdownNotification from "./DropdownNotification";
 import DropdownUser from "./DropdownUser";
 import Search from "./Search";
 import { IoMdMenu, MdOfflineBolt } from "@/utils/icons";
+import { SidebarContext } from "@/context/sidebar.context";
+import { DarkModeSwitcher } from "@/components";
 
-type SidebarProps = {
-  sidebarOpen: boolean;
-  setSidebarOpen: Dispatch<SetStateAction<boolean>>;
-};
 
-const Header = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
+
+const Header = () => {
+  const {sidebarOpen, setSidebarOpen} = useContext(SidebarContext)
   return (
     <header className="sticky top-0 z-40 flex w-full bg-white min-h-[75px]">
       <div className="flex flex-grow items-center px-6 py-5 sm:justify-between md:px-6 2xl:px-11">
