@@ -2,9 +2,9 @@
   <h3 align="center">GoStock - Stock Website</h3>
 
   <p align="center">
-    Easily invest in stocks and crypto in oneGoStock platform.
+    Easily invest in stocks and crypto in on GoStock platform.
     <br />
-    <a href="">Visit Website</a>
+    <a href="https://gostock.netlify.app/">Visit Website</a>
   </p>
 </div>
 
