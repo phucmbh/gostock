@@ -29,14 +29,14 @@ function MenuItem({ icon, title, path, notification }: MenuItemProps) {
   return (
     <Link
       href={path}
-      className="text-semiblack flex items-center justify-between p-2 hover:rounded-md hover:bg-borderwhite"
+      className="flex items-center justify-between p-2 text-semiblack hover:rounded-md hover:bg-borderwhite"
     >
       <div className="flex items-center gap-2">
         {icon}
         <span>{title}</span>
       </div>
       {notification && (
-        <div className="flex size-4 items-center justify-center rounded-full bg-rose-600 text-[10px] text-white">
+        <div className="flex size-4 items-center justify-center rounded-full bg-rose-500 text-[10px] text-[#ffffff]">
           {notification}
         </div>
       )}

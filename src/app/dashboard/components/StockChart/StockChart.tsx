@@ -1,10 +1,13 @@
 import { ComponentProps } from "react";
+import HeaderChart from "./HeaderChart";
+import AreaChart from "./AreaChart";
 
 const StockChart = (props: ComponentProps<"div">) => {
   return (
     <div {...props}>
-      <div className="w-full h-[500px] bg-white shadow-sm border border-borderwhite rounded p-4">
-        <div>StockChart</div>
+      <div className=" flex h-[500px] flex-col w-full rounded border border-borderwhite bg-white p-5 shadow-sm text-semiblack">
+        <HeaderChart />
+        <AreaChart />
       </div>
     </div>
   );

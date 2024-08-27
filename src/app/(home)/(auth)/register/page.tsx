@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { RegisterForm } from "../../components";
 import PATH from "@/utils/constant/path";
+import { RegisterForm } from "../components";
 
 const RegisterPage = () => {
   return (
@@ -15,7 +15,7 @@ const RegisterPage = () => {
       <RegisterForm />
       <div className="mt-5 flex gap-2 text-semiblack">
         <p>Already have an account?</p>
-        <Link href={PATH.LOGIN} className="text-link">
+        <Link href={PATH.LOGIN} className="text-link hover:underline">
           Login
         </Link>
       </div>

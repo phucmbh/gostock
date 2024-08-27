@@ -1,26 +1,27 @@
 "use client";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { RegisterBody, RegisterBodyType } from "@/validation/auth.schema";
-import { Input } from "@/components";
+import { LoginBody, LoginBodyType } from "@/validation/auth.schema";
+import { Button, Input } from "@/components";
+import PATH from "@/utils/constant/path";
+import { useRouter } from "next/navigation";
 
 const LoginForm = () => {
+  const router = useRouter();
   const {
     handleSubmit,
     register,
     formState: { errors },
-  } = useForm<RegisterBodyType>({
-    resolver: zodResolver(RegisterBody),
+  } = useForm<LoginBodyType>({
+    resolver: zodResolver(LoginBody),
     defaultValues: {
-      name: "",
       email: "",
       password: "",
-      confirmPassword: "",
     },
   });
 
-  const onSubmit = (values: RegisterBodyType) => {
-    console.log(values.name);
+  const onSubmit = async (values: LoginBodyType) => {
+    router.push(PATH.DASHBOARD);
   };
 
   return (
@@ -29,12 +30,6 @@ const LoginForm = () => {
       className="w-full space-y-2 lg:max-w-[500px]"
       noValidate
     >
-      <Input
-        name="name"
-        register={register}
-        errorMessage={errors.name?.message}
-        placeholder="Name"
-      />
       <Input
         name="email"
         register={register}
@@ -47,20 +42,9 @@ const LoginForm = () => {
         errorMessage={errors.password?.message}
         placeholder="Password"
       />
-      <Input
-        name="confirmPassword"
-        register={register}
-        errorMessage={errors.confirmPassword?.message}
-        placeholder="Re-enter your password"
-      />
 
       <div className="text-center">
-        <button
-          type="submit"
-          className="rounded bg-semiblack px-5 py-1 text-semiwhite"
-        >
-          Login
-        </button>
+        <Button>Login</Button>
       </div>
     </form>
   );

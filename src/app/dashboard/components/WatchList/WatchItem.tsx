@@ -22,7 +22,7 @@ const WatchItem = ({ name, image, code, price, percent }: WatchListType) => {
         </div>
         <div className="flex justify-between">
           <div className="text-sm text-gray-400">{name}</div>
-          <div className={clsx("text-sm text-rose-600", percent > 0 && "text-green-500")}>{percent}%</div>
+          <div className={clsx("text-sm text-rose-500", percent > 0 && "text-green-500")}>{percent}%</div>
         </div>
       </div>
     </div>

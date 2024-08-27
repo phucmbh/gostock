@@ -7,6 +7,8 @@ import {
 
 import CryptoPortfolioSvg from '../../public/crypto-portfolio.svg'
 
+import { GoDownload } from "react-icons/go";
+
 import {
   IoMailOutline,
   IoNotificationsOutline,
@@ -24,6 +26,7 @@ import {
   IoIosArrowForward,
   IoIosArrowBack,
   IoMdMenu,
+  IoMdLogIn,
 } from "react-icons/io";
 import { FaArrowUp, FaArrowDownLong, FaArrowUpLong } from "react-icons/fa6";
 import { HiOutlinePlusSm } from "react-icons/hi";
@@ -52,6 +55,7 @@ export {
   FaArrowDownLong,
   FaArrowUpLong,
   IoArrowBack,
-  IoMdMenu,
+  IoMdMenu,IoMdLogIn ,
+  GoDownload,
   CryptoPortfolioSvg,
 };

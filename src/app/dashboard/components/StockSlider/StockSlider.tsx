@@ -48,6 +48,7 @@ const StockSlider = () => {
                 image={item.image}
                 total_return={item.total_return}
                 total_share={item.total_share}
+                data={item.data}
               />
             </SwiperSlide>
           ))}

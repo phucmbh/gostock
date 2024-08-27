@@ -2,9 +2,12 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { RegisterBody, RegisterBodyType } from "@/validation/auth.schema";
-import { Input } from "@/components";
+import { Button, Input } from "@/components";
+import { useRouter } from "next/navigation";
+import PATH from "@/utils/constant/path";
 
 const RegisterForm = () => {
+  const router  = useRouter()
   const {
     handleSubmit,
     register,
@@ -19,14 +22,15 @@ const RegisterForm = () => {
     },
   });
 
-  const onSubmit = (values: RegisterBodyType) => { 
+  const onSubmit = async (values: RegisterBodyType) => {
     console.log(values.name);
+    router.push(PATH.DASHBOARD)
   };
 
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="w-full lg:max-w-[500px] space-y-2 "
+      className="w-full space-y-2 lg:max-w-[500px]"
       noValidate
     >
       <Input
@@ -43,21 +47,21 @@ const RegisterForm = () => {
       />
       <Input
         name="password"
+        type="password"
         register={register}
         errorMessage={errors.password?.message}
         placeholder="Password"
       />
       <Input
         name="confirmPassword"
+        type="password"
         register={register}
         errorMessage={errors.confirmPassword?.message}
         placeholder="Re-enter your password"
       />
 
       <div className="text-center">
-        <button type="submit" className="rounded bg-semiblack px-5 py-1 text-semiwhite">
-          Sign up
-        </button>
+        <Button>Sign up</Button>
       </div>
     </form>
   );

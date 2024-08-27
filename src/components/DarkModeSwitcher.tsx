@@ -2,13 +2,14 @@
 import { ThemeContext } from "@/context/theme.context";
 import { MdOutlineNightlight, MdOutlineLightMode } from "@/utils/icons";
 import { LocalStorage } from "@/utils/localStorage";
+import clsx from "clsx";
 import { ButtonHTMLAttributes, useContext } from "react";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  defaultColor?: "dark" | "light";
+  className?: string;
 }
 
-const DarkModeSwitcher = ({ defaultColor = "light", ...rest }: ButtonProps) => {
+const DarkModeSwitcher = ({ className, ...rest }: ButtonProps) => {
   const { theme, setTheme } = useContext(ThemeContext);
 
   const handleChangeTheme = () => {
@@ -16,15 +17,13 @@ const DarkModeSwitcher = ({ defaultColor = "light", ...rest }: ButtonProps) => {
     setTheme(newTheme);
     document.body.setAttribute("data-theme", newTheme);
     LocalStorage.setTheme(newTheme);
-
-    const classNameResult =
-      defaultColor === "light"
-        ? "flex size-7 shrink-0 items-center justify-center rounded-full border border-borderwhite bg-semiwhite shadow hover:bg-borderwhite"
-        : "flex size-7 shrink-0 items-center justify-center rounded-full border border-borderwhite bg-semiwhite shadow hover:bg-borderwhite";
   };
   return (
     <button
-      className="flex size-7 shrink-0 items-center justify-center rounded-full border border-borderwhite bg-semiwhite shadow hover:bg-borderwhite"
+      className={clsx(
+        "flex size-7 shrink-0 items-center justify-center rounded-full border border-borderwhite bg-semiwhite hover:bg-borderwhite",
+        className,
+      )}
       onClick={handleChangeTheme}
       {...rest}
     >

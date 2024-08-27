@@ -14,7 +14,7 @@ const Input = ({ register, errorMessage, name, type= 'text', ...rest }: InputPro
         type={type}
         {...register(name)}
         {...rest}
-        className="bg-centerwhite w-full rounded border border-borderwhite p-2 outline-none"
+        className="bg-centerwhite w-full rounded border border-borderwhite p-2 outline-none text-semiblack "
       />
       {errorMessage && (
         <div className="mt-1 text-sm text-rose-600">{errorMessage}</div>

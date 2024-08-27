@@ -16,4 +16,8 @@
   .swiper-button-disabled {
     display: none;
   }
+
+  .chart {
+    height: 400px;
+  }
 }
