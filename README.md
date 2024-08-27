@@ -4,7 +4,7 @@
   <p align="center">
     Easily invest in stocks and crypto in on GoStock platform.
     <br />
-    <a href="https://gostock.netlify.app/">Visit Website</a>
+    <a href="https://gostock.netlify.app/" target="_blank">Visit Website</a>
   </p>
 </div>
 
